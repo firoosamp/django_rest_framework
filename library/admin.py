@@ -11,3 +11,4 @@ class BookAdmin(admin.ModelAdmin):
     list_display = ('title' , 'price')
 
 admin.site.register(models.Author)
+admin.site.register(models.Borrower)

@@ -2,7 +2,7 @@ from datetime import date
 
 from rest_framework import serializers
 
-from library.models import Book, Author
+from library.models import Book, Author, Borrower
 
 
 class AutherSerializer(serializers.ModelSerializer):
@@ -28,3 +28,7 @@ class BookSerializer(serializers.ModelSerializer):
             )
         return value
 
+class BorrowerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Borrower
+        fields = ['id', 'name', 'email', 'borrowed_books']

@@ -21,3 +21,10 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
+class Borrower(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    borrowed_books = models.ManyToManyField(Book, blank=True)
+
+    def __str__(self):
+        return self.name
